@@ -1,0 +1,46 @@
+---
+// Component script section
+import Main from '../layouts/Main.astro'
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg"
+---
+
+<!-- Component template section -->
+<Main title="Frau Katerina">
+	<body>
+		<div class="profile">			
+			<img alt="Frau katerina's website" width="100px" height="100px" src={profilePicture} class="profile__picture">
+			<div class="profile__details">
+				<h1>Frau Katerina</h1>
+				<h2>VP of Engineering at Gooogle</h2>
+				<p>Helping developers be excellent and suceed at building scalable products.</p>
+			</div>
+		</div>
+	</body>
+</Main>
+
+<style>
+	/* CSS as usual */
+	.profile {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 1rem 0 3rem 0
+	}
+
+	.profile__details {
+		flex: 1 0 300px;
+	}
+
+	.profile__details > h1 {
+		margin-top: 0
+	}
+
+	.profile__picture {
+		border-radius: 50%;
+		margin: 0 2rem 1rem 0
+	}
+</style>
+
+<script>
+	console.log('hello world')
+</script>

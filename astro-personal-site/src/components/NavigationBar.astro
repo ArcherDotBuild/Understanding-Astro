@@ -41,4 +41,21 @@ import ThemeToggler from './ThemeToggler.astro'
   a:hover {
     color: var(--grey-900);
   }
+
+  a.active {
+    background: var(--grey-900);
+    color: var(--background);
+  }
+
 </style>
+
+<script>
+  const {pathname} = window.location
+
+  const activeNavigationElement
+    = document.querySelector(`nav a[href="${pathname}"]`)
+
+    if(activeNavigationElement) {
+      activeNavigationElement.classList.add("active")
+    }
+</script>

@@ -1,0 +1,33 @@
+---
+import Card from "./Card.astro"
+
+import type { Props as CardProp } from "./Card.astro"
+
+type Props = {
+  // cards: Array<CardProp>
+    cards: CardProp[];
+}
+
+const { cards } = Astro.props
+---
+
+<div class="cards">
+    <!-- Dynamically render multiple Card components based on the array prop passed. -->
+    {cards.map((card) => 
+      <Card {...card} />
+    )}
+</div>
+
+<style>
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .cards {
+      flex-direction: row;
+    }
+  }
+</style>

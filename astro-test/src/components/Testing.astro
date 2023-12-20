@@ -1,10 +1,38 @@
 ---
-const URL = 'https://random-data-api.com/api/users/random_user?size=1';
+const URL = 'https://random-data-api.com/api/users/random_user?size=3';
 const response = await fetch(URL);
 const data = await response.json();
 ---
+<head>
+  <meta charset="utf-8" />
+</head>
 <!-- use here -->
-<h1>Random user:</h1>
-<pre>
-  {JSON.stringify(data, null, 2)}
-</pre>
+
+<!-- Dynamic attribute -->
+<a href={URL}>Go get a user</a>
+
+<!-- Dynamic HTML -->
+<h1>Here are the {data.length} users</h1>
+<!-- <ul>
+  {
+    data.map((user) => (
+      <li>{`${user.first_name} ${user.last_name}`}</li>
+    ))
+  }
+</ul> -->
+
+<!-- Conditional rendering -->
+<ul>
+    {
+    data.map((user) => {
+      const { gender } = user
+      // Non-binary
+     return (
+      <li>
+        <span>{`${user.first_name} ${user.last_name}`}</span>
+        <span>{gender == 'Non-binary' && 'Non-binary 😎'}</span>
+      </li>
+      )
+    })
+  }
+</ul>

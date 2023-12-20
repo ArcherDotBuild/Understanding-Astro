@@ -1,0 +1,11 @@
+---
+const URL = 'https://random-data-api.com/api/users/random_user?size=1';
+const response = await fetch(URL);
+const data = await response.json();
+---
+<!-- use here -->
+<!-- Consuming variables -->
+<h1>Random user:</h1>
+<pre>
+  {JSON.stringify(data, null, 2)}
+</pre>

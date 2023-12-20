@@ -1,33 +1,10 @@
 ---
-// JavaScript
-const data = "Hello"
-
-// TypeScript
-const someValue: string = "another hello"
-
-let newVar: string = "This is a new var"
-// newVar = 9; Type 'number' is not assignale to type 'string'
-
-type Props = {
-  name: string
-}
-
-// imports 
-// Astro components
-import Style from '../components/Style.astro'
-// Markdown
-// JS
-// import { hello } from '../hello.js'
-
-// TS or TSX
-// import {forgotPassword } from '../forgotPassword'
-
-// NPM packages
-// import titleCase from 'title-case'
-
-// JSON
-// CSS
-// CSS modules (.modules.css)
-// Images(.svg, .jpg, .npg)
-// import imgRef from './image.png'
+const URL = 'https://random-data-api.com/api/users/random_user?size=1';
+const response = await fetch(URL);
+const data = await response.json();
 ---
+<!-- use here -->
+<h1>Random user:</h1>
+<pre>
+  {JSON.stringify(data, null, 2)}
+</pre>

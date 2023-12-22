@@ -1,20 +1,30 @@
 ---
 import Text from '../components/Text.astro'
 import Main from '../components/Main.astro'
+import Code from '../components/Code.astro'
 
 const URL = 'https://random-data-api.com/api/users/random_user?size=3';
 const response = await fetch(URL);
 const data = await response.json();
+
+// shorthand props
+const name = "ElfGodd"
 ---
 
 <!-- use here -->
 <Main>
+  <!-- <Text as="h1" name={name}>This is a test</Text> -->
+  <Text as="h1" {name}>, Shorthand syntax, This is a test</Text>
+
   <!-- Dynamic attribute -->
   <a href={URL}>Go get a user</a>
 
   <!-- Dynamic HTML -->
   <Text as="h1">Here are the {data.length} users</Text>
   <Text as="p">Read more about the users below</Text>
+
+  <p>Use an <Code>if</Code> statement. Otherwise, use a <Code>map()</Code>.</p>
+
   <!-- Conditional rendering -->
   <ul>
       {

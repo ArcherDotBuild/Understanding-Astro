@@ -1,8 +1,9 @@
 ---
-const { as: As } = Astro.props
+const { as: As, name } = Astro.props
 ---
 
 <As>
+  The user's name is { name || "--" }
   <slot />
 </As>
 

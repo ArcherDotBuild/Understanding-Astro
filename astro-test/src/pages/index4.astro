@@ -1,0 +1,36 @@
+---
+import Text from '../components/Text.astro'
+
+const URL = 'https://random-data-api.com/api/users/random_user?size=3';
+const response = await fetch(URL);
+const data = await response.json();
+
+console.log(data);
+---
+
+<head>
+  <meta charset="utf-8" />
+</head>
+<!-- use here -->
+
+<!-- Dynamic attribute -->
+<a href={URL}>Go get a user</a>
+
+<!-- Dynamic HTML -->
+<Text as="h1">Here are the {data.length} users</Text>
+<Text as="p">Read more about the users below</Text>
+<!-- Conditional rendering -->
+<ul>
+    {
+    data.map((user) => {
+      const { gender } = user
+      // Non-binary
+     return (
+      <li>
+        <span>{`${user.first_name} ${user.last_name}`}</span>
+        <span>{gender == 'Non-binary' && 'Non-binary 😎'}</span>
+      </li>
+      )
+    })
+  }
+</ul>

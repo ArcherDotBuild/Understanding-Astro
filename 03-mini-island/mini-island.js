@@ -17,8 +17,8 @@ class MiniIsland extends HTMLElement {
   }
 }
 
-if ('customElement' in window) {
-  window.customElement.define(MiniIsland.tagName, MiniIsland)
+if ('customElements' in window) {
+  window.customElements.define(MiniIsland.tagName, MiniIsland)
 } else {
   console.error(
     'Island cannot be initiated because Window.customElements is unavailable'

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Initial island demo</title>
-  <script type="module">
-    import '../mini-island.js'
-  </script>
-</head>
-<body>
-  <h1>Initial island demo</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Initial island demo</title>
+    <script type="module">
+      import '../mini-island.js'
+    </script>
+  </head>
+  <body>
+    <h1>Initial island demo</h1>
 
-  <mini-island>
-    <p>Hello future island</p>
-  </mini-island>
-</body>
+    <mini-island>
+      <p>Hello future island</p>
+      <template>
+        <script type="module">
+          console.log('THIS IS A WARNING FROM AN ISLAND')
+        </script>
+      </template>
+    </mini-island>
+  </body>
 </html>

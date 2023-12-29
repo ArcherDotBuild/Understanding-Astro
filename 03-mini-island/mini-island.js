@@ -21,7 +21,9 @@ class MiniIsland extends HTMLElement {
   }
 
   async hydrate() {
-    // deal with this
+    const conditions = []    
+    // await condition promise
+    await Promise.all(conditions)
     const relevantChildTemplates = this.getTemplates()
     this.replaceTemplates(relevantChildTemplates)
   }
@@ -40,6 +42,50 @@ class MiniIsland extends HTMLElement {
     return this.querySelectorAll(
       `template[${MiniIsland.attributes.dataIsland}]`
     )
+  }
+}
+
+class Conditions {
+  static map = {
+    media: Conditions.waitForMedia,
+    idle: Conditions.waitForIdle,
+    visible: Conditions.waitForVisible,
+  }
+
+  static waitForMedia() {
+    return new Promise((resolve) => resolve())
+  }
+
+  static waitForIdle() {
+    return new Promise((resolve) => resolve())
+  }
+
+  static waitForVisible() {
+    return new Promise((resolve) => resolve())
+  }
+
+  static getConditions(node) {
+    let result = {}
+
+    // {visible: ""} client:visible=""
+    // {idle: ""} client:idle=""
+    // {media: ""} client:media="(max-width: 400px)"
+
+    for (const conditions of Object.keys(Conditions.map)) {
+      //  `client: ${condition}`
+
+      if(node.hasAttribute(`client: ${condition}`)) {
+        result[condition] = node.getAttribute(`client: ${condition}`)
+      }
+    }
+
+    return result
+  }
+
+  static hasConditions(node) {
+    const conditionsAttributeMap = Conditions.getConditions(node)
+
+    return Object.keys(conditionsAttributeMap).length > 0
   }
 }
 

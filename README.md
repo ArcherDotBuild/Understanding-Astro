@@ -54,27 +54,21 @@ Images will be optimized in the src/ folder, but not in the public folder
 
 ```html
 <ul>
-    {
-    data.map((user) => {
-      const { gender } = user
-      // Non-binary
-     return (
-      <li>
-        <span>{`${user.first_name} ${user.last_name}`}</span>
-        <span>{gender == 'Non-binary' ? 'Non-binary 😎' : '😃'}</span>
-        // Only shows if it is true
-        <span>{gender == 'Non-binary' && 'Non-binary 😎'}</span>
-      </li>
-      )
-    })
-  }
+  { data.map((user) => { const { gender } = user // Non-binary return (
+  <li>
+    <span>{`${user.first_name} ${user.last_name}`}</span>
+    <span>{gender == 'Non-binary' ? 'Non-binary 😎' : '😃'}</span>
+    // Only shows if it is true
+    <span>{gender == 'Non-binary' && 'Non-binary 😎'}</span>
+  </li>
+  ) }) }
 </ul>
 ```
 
 ## 05 14. Similarities and Differences to JSX
 
 - `<div class="astro"></div>` ----> ASTRO
-- `<div className="jsx"></div>` ----> JSX  
+- `<div className="jsx"></div>` ----> JSX
 
 - `<div data-value="astro"></div>` ----> ASTRO
 - `<div dataValue="jsx"></div>` ----> ASTRO
@@ -101,3 +95,16 @@ JavaScript style comment won't show up in the browser or development mode, so if
 ```
 
 ## 08 14. Hydration Implementation
+
+```html
+<mini-island client:visible>
+  <p>Hello future island</p>
+  <template data-island>
+    <script type="module">
+      console.log('THIS IS A WARNING FROM AN ISLAND')
+    </script>
+  </template>
+</mini-island>
+```
+
+## 09 15. Partial Hydration Implementation - Part 1

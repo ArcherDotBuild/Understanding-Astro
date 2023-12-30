@@ -89,8 +89,26 @@ class Conditions {
     })
   }
 
-  static waitForMedia() {
-    return new Promise((resolve) => resolve())
+  static waitForMedia(query) {
+    let queryList = {
+      matches: true
+    }
+
+    if(query && 'matchMedia' in window) {
+      queryList = window.matchMedia(query)
+    }
+
+    if(queryList.matches) {
+      return
+    }
+
+    return new Promise((resolve) => {
+      queryList.addListener((e) => {
+        if(e.matches) {
+          resolve()
+        }
+      })
+    })
   }
 
   static getConditions(node) {

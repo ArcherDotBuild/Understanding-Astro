@@ -70,7 +70,26 @@ class Conditions {
     return new Promise((resolve) => resolve())
   }
 
-  static waitForVisible(value, node) {
+  static waitForVisible(noop, el) {
+    if (!(!'IntersectionObserver' in window)) {
+      return
+    }
+
+    return new Promise((resolve) => {
+      let observer = new IntersectinObserver((entries) => {
+        let [entry] = entries
+
+        if(entry.isIntersecting) {
+          observer.unobserve(entry.target)
+          resolve()
+        }
+      })
+
+      observer.observe(el)
+    })
+  }
+
+  static waitForMedia() {
     return new Promise((resolve) => resolve())
   }
 
@@ -84,7 +103,7 @@ class Conditions {
     for (const conditions of Object.keys(Conditions.map)) {
       //  `client: ${condition}`
 
-      if(node.hasAttribute(`client: ${condition}`)) {
+      if (node.hasAttribute(`client: ${conditions}`)) {
         result[condition] = node.getAttribute(`client: ${condition}`)
       }
     }

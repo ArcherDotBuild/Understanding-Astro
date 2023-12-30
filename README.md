@@ -106,5 +106,3 @@ JavaScript style comment won't show up in the browser or development mode, so if
   </template>
 </mini-island>
 ```
-
-## 09 15. Partial Hydration Implementation - Part 1

@@ -21,7 +21,21 @@ class MiniIsland extends HTMLElement {
   }
 
   async hydrate() {
-    const conditions = []    
+    const conditions = []
+
+
+    let conditionsAttributeMap = Conditions.getConditions(this)
+    for(const condition in conditionsAttributeMap) {
+      const conditionFunction = Conditions.map[condition]
+      
+      // {idl: "", visible: "", media: "(max..."}
+      if(conditionFunction) {
+        const conditionPromise = conditionFunction(conditionsAttributeMap[condition], this)
+      }
+
+      condition.push(conditionPromise)
+    }
+
     // await condition promise
     await Promise.all(conditions)
     const relevantChildTemplates = this.getTemplates()
@@ -52,15 +66,11 @@ class Conditions {
     visible: Conditions.waitForVisible,
   }
 
-  static waitForMedia() {
-    return new Promise((resolve) => resolve())
-  }
-
   static waitForIdle() {
     return new Promise((resolve) => resolve())
   }
 
-  static waitForVisible() {
+  static waitForVisible(value, node) {
     return new Promise((resolve) => resolve())
   }
 

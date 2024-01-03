@@ -106,3 +106,36 @@ JavaScript style comment won't show up in the browser or development mode, so if
   </template>
 </mini-island>
 ```
+
+## 09 4. Step 2 Install the Framework Integration
+
+`npx astro add react` Install React Astro integration
+
+## 10 5. Steps 3 & 4 Write and Render the Framework Component
+
+## 11 7. The Clientload Directive
+
+`<UpvoteContent client:load  />`
+
+## 12 8. The Clientonly Directive
+
+`<UpvoteContent client:only  />`
+
+## 13 9. The Clientidle Directive
+
+`<UpvoteContent client:idle  />`
+
+## 14 10. The Clientvisible Directive
+
+`<UpvoteContent client:visible  />`
+
+## 15 11. The Clientmedia Directive
+
+`<UpvoteContent client:media  />`
+
+# 16 12. The Clientmedia Directive
+
+`<UpvoteContent client:media="(max-width: 30em)"  />`
+
+# 17 
+

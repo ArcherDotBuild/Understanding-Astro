@@ -131,11 +131,9 @@ JavaScript style comment won't show up in the browser or development mode, so if
 
 ## 15 11. The Clientmedia Directive
 
-`<UpvoteContent client:media  />`
-
-# 16 12. The Clientmedia Directive
-
 `<UpvoteContent client:media="(max-width: 30em)"  />`
 
-# 17 
+# 16 12. Using Multiple Frameworks in Astro
+
+# 17 13. 1 Signals from Preact.html
 

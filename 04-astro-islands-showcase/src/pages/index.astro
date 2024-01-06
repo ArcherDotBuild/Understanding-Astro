@@ -1,9 +1,11 @@
 ---
 import DefaultIslandLayout from "../layouts/DefaultIslandLayout.astro";
 import { UpvoteContent } from '../components/UpvoteContent.jsx';
+import UpvoteContentVue from '../components/UpvoteContent.vue'
 ---
 
 <DefaultIslandLayout>
   <!-- Render our framework component -->
-  <UpvoteContent client:media="(max-width: 30em)"  />
+  <UpvoteContent client:load />
+  <UpvoteContentVue client:load />
 </DefaultIslandLayout>

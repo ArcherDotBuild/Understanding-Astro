@@ -109,7 +109,7 @@ JavaScript style comment won't show up in the browser or development mode, so if
 
 ## 09 4. Step 2 Install the Framework Integration
 
-`npx astro add react` Install React Astro integration
+`npx astro add react` Install's React Astro integration
 
 ## 10 5. Steps 3 & 4 Write and Render the Framework Component
 
@@ -135,5 +135,10 @@ JavaScript style comment won't show up in the browser or development mode, so if
 
 # 16 12. Using Multiple Frameworks in Astro
 
-# 17 13. 1 Signals from Preact.html
+`npx astro add vue` Install's Vue Astro integration
+
+# 17 13. 1 Signals from Preact
+
+# 18 13.2 Signia from tldraw.html
+
 

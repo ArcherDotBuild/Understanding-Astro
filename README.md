@@ -137,8 +137,25 @@ JavaScript style comment won't show up in the browser or development mode, so if
 
 `npx astro add vue` Install's Vue Astro integration
 
-# 17 13. 1 Signals from Preact
+# 17 13. Sharing State between Component Islands
 
-# 18 13.2 Signia from tldraw.html
+`npm install nanostores @nanostores/react @nanostores/vue` Install's Nanostores and nanostores react vue integration
 
 
+```html
+data() {
+  // data properties used in the UI template
+  return {
+    upvoteCount: 0,
+    maxUpvoteCount: 50,
+  };
+},
+methods: {
+  // method called when you click the upvote button
+  upvote() {
+    if (this.upvoteCount < this.maxUpvoteCount) {
+      this.upvoteCount++;
+    }
+  },
+},
+``````

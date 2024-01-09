@@ -1,17 +1,21 @@
 import { useState } from "react";
+import { useStore } from '@nanostores/react'
+import { upvoteCountStore } from '../stores/upvotes';
 
 const MAX_COUNT = 50;
 
 export const UpvoteContent = () => {
-  const [upvoteCount, setUpvoteCount] = useState(0);
+  // const [upvoteCount, setUpvoteCount] = useState(0);
+  const upvoteCount = useStore(upvoteCountStore)
 
   return (
     <div className="m-2 flex items-center rounded-md border border-slate-600 p-2">
       <button
         onClick={() => {
-          setUpvoteCount((prevCount) =>
-            prevCount < MAX_COUNT ? prevCount + 1 : prevCount
-          );
+          // upvoteCountStore((prevCount) =>
+          //   prevCount < MAX_COUNT ? prevCount + 1 : prevCount
+          // )
+          upvoteCountStore.set(upvoteCount + 1)
         }}
         className="h-[80px] w-[80px] rounded-full border border-gray-500 bg-slate-900 p-4 text-center text-sm text-green-600 hover:scale-90 active:bg-slate-800"
       >

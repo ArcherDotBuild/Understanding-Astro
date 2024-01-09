@@ -20,6 +20,9 @@ export default {
 </script>
 
 <template>
+  <div>
+    <slot />
+  </div>
   <div class="m-2 flex items-center rounded-md border border-slate-600 p-2">
     <button
       class="h-[80px] w-[80px] rounded-full border border-gray-500 bg-slate-900 p-4 text-center text-sm text-green-600 hover:scale-90 active:bg-slate-800"

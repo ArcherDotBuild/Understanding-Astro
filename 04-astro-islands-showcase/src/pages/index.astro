@@ -6,6 +6,10 @@ import UpvoteContentVue from '../components/UpvoteContent.vue'
 
 <DefaultIslandLayout>
   <!-- Render our framework component -->
-  <UpvoteContent client:load />
-  <UpvoteContentVue client:load />
+  <UpvoteContent client:load label="Click">
+    <em>An upvote counter created using React</em>
+  </UpvoteContent>
+  <UpvoteContentVue client:load>
+    <em>An upvote counter created using Vue</em>
+  </UpvoteContentVue>
 </DefaultIslandLayout>

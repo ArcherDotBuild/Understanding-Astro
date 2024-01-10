@@ -21,7 +21,8 @@ export default {
 
 <template>
   <div>
-    <slot />
+    <slot name="description" />
+    <slot name="awesome" />
   </div>
   <div class="m-2 flex items-center rounded-md border border-slate-600 p-2">
     <button

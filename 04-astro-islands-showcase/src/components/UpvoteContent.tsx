@@ -5,7 +5,7 @@ import type { PropsWithChildren } from 'react'
 
 const MAX_COUNT = 50;
 
-type Props = { label: string }
+type Props = { label: string; description?: string; awesome?: string }
 // export const UpvoteContent = (props: { label: string }) => {
 export const UpvoteContent = (props: PropsWithChildren<Props>) => {
     // const [upvoteCount, setUpvoteCount] = useState(0);
@@ -13,6 +13,8 @@ export const UpvoteContent = (props: PropsWithChildren<Props>) => {
 
     return (
       <div>
+        <div>{props.description}</div>
+        <div>{props.awesome}</div>
         <div>{props.children}</div>
         <div className='m-2 flex items-center rounded-md border border-slate-600 p-2'>
           <button

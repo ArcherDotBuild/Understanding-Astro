@@ -7,17 +7,11 @@ import UpvoteContentVue from '../components/UpvoteContent.vue'
 <DefaultIslandLayout>
   <!-- Render our framework component -->
   <UpvoteContent client:load label="Click">
-    <em slot="description">An upvote counter created using React</em>
-    <ul slot="awesome">
-      <li>Youa re awesome</li>
-      <li>The tutor is awesome</li>
-    </ul>
+    <div slot="description">
+      <UpvoteContent client:idle label="Click">
+    
+    </UpvoteContent>
   </UpvoteContent>
-  <UpvoteContentVue client:load>
-    <em slot="description">An upvote counter created using Vue</em>
-    <ul slot="awesome">
-      <li>Youa re awesome</li>
-      <li>The tutor is awesome</li>
-    </ul>
-  </UpvoteContentVue>
+  <UpvoteContentVue client:idle />
+    </div>
 </DefaultIslandLayout>

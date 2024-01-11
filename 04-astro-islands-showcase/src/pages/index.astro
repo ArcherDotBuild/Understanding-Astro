@@ -2,16 +2,18 @@
 import DefaultIslandLayout from "../layouts/DefaultIslandLayout.astro";
 import { UpvoteContent } from '../components/UpvoteContent.jsx';
 import UpvoteContentVue from '../components/UpvoteContent.vue'
+import Text from '../components/Text.astro'
 ---
 
 <DefaultIslandLayout>
   <!-- Render our framework component -->
   <UpvoteContent client:load label="Click">
     <div slot="description">
-      <UpvoteContent client:idle label="Click">
-    
-    </UpvoteContent>
+      <UpvoteContent client:idle label="Click" />
+    </div>
+    <div slot="static-content">
+      <Text />
+    </div>
   </UpvoteContent>
   <UpvoteContentVue client:idle />
-    </div>
 </DefaultIslandLayout>

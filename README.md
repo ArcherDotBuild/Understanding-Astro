@@ -158,4 +158,32 @@ methods: {
     }
   },
 },
-``````
+```
+
+# 18 14. Handling Props (and Children) in Framework Components
+
+# 19 15. Using Multiple Slots in Framework Components
+
+# 20 16. Nested Framework Components
+
+```jsx
+<DefaultIslandLayout>
+  <!-- Render our framework component -->
+  <UpvoteContent client:load label="Click">
+    <em slot="description">An upvote counter created using React</em>
+    <ul slot="awesome">
+      <li>Youa re awesome</li>
+      <li>The tutor is awesome</li>
+    </ul>
+  </UpvoteContent>
+  <UpvoteContentVue client:load>
+    <em slot="description">An upvote counter created using Vue</em>
+    <ul slot="awesome">
+      <li>Youa re awesome</li>
+      <li>The tutor is awesome</li>
+    </ul>
+  </UpvoteContentVue>
+</DefaultIslandLayout>
+```
+
+# 21 17. Astro Island Gotchas

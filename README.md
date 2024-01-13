@@ -1,3 +1,5 @@
+# Understanding Astro
+Teacher: Ohans Emmanuel
 Astro Beginner Project:
 
 - https://github.com/understanding-astro/astro-beginner-project
